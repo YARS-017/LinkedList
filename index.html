@@ -1,0 +1,167 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Another things -->
+  <link rel="icon" href="img/pointer.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Fontawesome -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootswatch Darkly Theme -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="vendor/css/fontawesome.css" />
+  <title>JS Todo List</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">JS LinkedList</a>
+          <div class="navbar-nav mr-auto mt-2 mt-lg-0"></div>
+          <form class="form-inline my-2 my-lg-0">                        
+            <button type="button" class="btn btn-info btn-block" id="settings">
+                Settings
+            </button>
+          </form>
+        </div>
+    </nav>
+    <!-- settings Modal -->
+    <div
+    class="modal fade"
+    id="modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Settings
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">          
+          <div class="settings-container">
+            <div>
+                <lable>Node animation speed:</lable>
+                <input id="settingsAnimationSpeed" type="number" placeholder="Miliseconds" class="form-control">
+            </div>
+            <div>
+                <lable>Pointer animation speed:</lable>
+                <input id="pointerAnimationSpeed" type="number" placeholder="Miliseconds" class="form-control">
+            </div>
+            <div>
+                <lable>Delete animation speed:</lable>
+                <input id="deleteAnimationSpeed" type="number" placeholder="Miliseconds" class="form-control">              
+            </div>
+            <div class="error-message">
+				<p id="settings-error"></p>
+			</div>
+			<div class="success">
+				<p id="succes"></p>
+			</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-info" id="modal-btn">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <main style="height: 729px;">
+        <section class="list" id="list"></section>
+
+        <section class="errors">
+            <div class="error-message">
+                <p id="error"></p>
+            </div>
+        </section>
+
+        <section class="operations">
+            <div class="wrapper">
+                <div>
+                    <button type="button" class="btn btn-info" id="set-btn">
+                        Set
+                    </button> 
+                    <input  type="number" class="form-control" placeholder="Index">                   
+                    <input  type="number" class="form-control" placeholder="Data">                                       
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-info" id="insert-btn">
+                        Insert
+                    </button>                    
+                    <input type="number" class="form-control" placeholder="Index" />
+                    <input type="number" class="form-control" placeholder="Data" />
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-info" id="add-btn">
+                        Add
+                    </button>                    
+                    <input class="form-control" type="number" placeholder="Data" />
+                </div>
+
+                <div>
+                    
+                    <div class="remove">
+                        <button type="button" class="btn btn-danger btn-block" id="remove-btn">
+                            Remove
+                        </button>
+                        <button class="button" id="remove-settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+
+                    <button class="remove-option" id="remove-index-btn">
+                        Index
+                    </button>
+                    <button class="remove-option" id="remove-data-btn">
+                        Data
+                    </button>
+
+                    <input class="form-control" type="number" placeholder="Index" />
+                    <input class="form-control" type="number" placeholder="Data" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- JQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+    crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./vendor/js/fontawesome.js"></script>
+    <script src="./js/LinkedList.js"></script>	
+	<script src="./js/settings.js"></script>
+</body>
+</html>
